@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../allhtml.css">
+<link rel="stylesheet" href="examstyle.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+</html>
+    <h2>止血凝血检查</h2>
+
+    
+	<!-- 问题 1 到问题 5 -->
+    <!-- 问题 1 -->
+<div class="question">
+    <h3>问题 1：什么是凝血酶时间（PT）用于评估的凝血过程？</h3>
+    <form id="coagulationQuiz1">
+        <label>
+            <input type="radio" name="answer1" value="A"> A. 血小板功能
+        </label>
+        <label>
+            <input type="radio" name="answer1" value="B"> B. 凝血因子的外源途径
+        </label>
+        <label>
+            <input type="radio" name="answer1" value="C"> C. 纤维蛋白溶解
+        </label>
+        <label>
+            <input type="radio" name="answer1" value="D"> D. 血浆中的抗凝物质
+        </label>
+        <label>
+            <input type="radio" name="answer1" value="E"> E. 血浆中的抗体
+        </label>
+		<button type="button" onclick="checkAnswer(1)">提交答案</button>
+    </form>
+    <div id="feedback1"></div>
+</div>
+
+<!-- 问题 2 -->
+<div class="question">
+    <h3>问题 2：APTT（活化部分凝血活酶时间）是用于测量哪一部分凝血通路的时间？</h3>
+    <form id="coagulationQuiz2">
+        <label>
+            <input type="radio" name="answer2" value="A"> A. 内源途径
+        </label>
+        <label>
+            <input type="radio" name="answer2" value="B"> B. 外源途径
+        </label>
+        <label>
+            <input type="radio" name="answer2" value="C"> C. 全血凝血时间
+        </label>
+        <label>
+            <input type="radio" name="answer2" value="D"> D. 纤维蛋白形成时间
+        </label>
+        <label>
+            <input type="radio" name="answer2" value="E"> E. 血小板凝集时间
+        </label>
+		<button type="button" onclick="checkAnswer(2)">提交答案</button>
+    </form>
+    <div id="feedback2"></div>
+</div>
+
+<!-- 问题 3 -->
+<div class="question">
+    <h3>问题 3：什么是D-二聚体的主要指示意义？</h3>
+    <form id="coagulationQuiz3">
+        <label>
+            <input type="radio" name="answer3" value="A"> A. 血小板功能评估
+        </label>
+        <label>
+            <input type="radio" name="answer3" value="B"> B. 深静脉血栓的存在
+        </label>
+        <label>
+            <input type="radio" name="answer3" value="C"> C. 凝血因子缺乏
+        </label>
+        <label>
+            <input type="radio" name="answer3" value="D"> D. 血小板聚集异常
+        </label>
+        <label>
+            <input type="radio" name="answer3" value="E"> E. 凝血酶时间延长
+        </label>
+		<button type="button" onclick="checkAnswer(3)">提交答案</button>
+    </form>
+    <div id="feedback3"></div>
+</div>
+
+<!-- 问题 5 -->
+<div class="question">
+    <h3>问题 4：什么是凝血酶原时间（TT）用于评估的凝血过程？</h3>
+    <form id="coagulationQuiz5">
+        <label>
+            <input type="radio" name="answer4" value="A"> A. 血小板聚集功能
+        </label>
+        <label>
+            <input type="radio" name="answer4" value="B"> B. 凝血因子的内源途径
+        </label>
+        <label>
+            <input type="radio" name="answer4" value="C"> C. 纤维蛋白溶解
+        </label>
+        <label>
+            <input type="radio" name="answer4" value="D"> D. 血浆中的抗凝物质
+        </label>
+        <label>
+            <input type="radio" name="answer4" value="E"> E. 血浆中的抗体
+        </label>
+		<button type="button" onclick="checkAnswer(4)">提交答案</button>
+    </form>
+
+      <div id="feedback4"></div>
+    </div>
+
+
+  </section>
+
+
+
+
+ <script>
+      function checkAnswer(questionNumber) {
+        var userAnswer = document.querySelector('input[name="answer' + questionNumber + '"]:checked');
+        var feedbackDiv = document.getElementById('feedback' + questionNumber);
+        var correctAnswer;
+
+        switch (questionNumber) {
+          case 1:
+            correctAnswer = 'B';
+            break;
+          case 2:
+            correctAnswer = 'A';
+            break;
+          case 3:
+            correctAnswer = 'B';
+            break;
+          case 4:
+            correctAnswer = 'C';
+            break;
+          case 5:
+            correctAnswer = 'E';
+            break;
+					
+			
+			
+			
+			
+          default:
+            break;
+        }
+
+        if (userAnswer) {
+          var userResponse = userAnswer.value;
+          if (userResponse === correctAnswer) {
+            feedbackDiv.textContent = '回答正确！';
+            feedbackDiv.style.color = 'green';
+          } else {
+            feedbackDiv.textContent = '回答错误，正确答案请仔细查阅资料。';
+            feedbackDiv.style.color = 'red';
+          }
+        } else {
+          feedbackDiv.textContent = '请选择一个答案。';
+          feedbackDiv.style.color = 'red';
+        }
+      }
+
+    
+    </script>
+
+  </section>
+
+
+</body>
+</html>
